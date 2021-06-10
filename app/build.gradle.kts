@@ -3,6 +3,7 @@ plugins {
     id(DependencyConfig.Plugin.KOTLIN_ANDROID)
     id(DependencyConfig.Plugin.KOTLIN_KAPT)
     id(DependencyConfig.Plugin.ANDROID_HILT)
+    id("scabbard.gradle") version "0.4.0"
 }
 
 subprojects {
@@ -11,9 +12,12 @@ subprojects {
     }
 }
 
+scabbard {
+    enabled = true
+}
+
 android {
     compileSdk = Version.AppConfig.Base.COMPILE_SDK
-    buildToolsVersion = Version.AppConfig.Base.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId = Version.AppConfig.Base.APP_ID
@@ -46,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(DependencyManager.appLibraries)
     kapt(DependencyManager.compilerLibraries)
     testImplementation(DependencyManager.testLibraries)

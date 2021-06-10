@@ -9,12 +9,12 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
-object NetworkHelper {
+internal object NetworkHelper {
 
     private val contentType = "application/json".toMediaType()
 
-    private val okHttpLoggingInterceptor by lazy {
-        HttpLoggingInterceptor().apply {
+    fun createLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().apply {
             level = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor.Level.BODY
             } else {
@@ -23,9 +23,9 @@ object NetworkHelper {
         }
     }
 
-    fun createOkHttpClient(): OkHttpClient {
+    fun createOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(okHttpLoggingInterceptor)
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 

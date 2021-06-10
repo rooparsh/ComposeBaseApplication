@@ -8,7 +8,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
-class RemoteJokeSourceImpl @Inject constructor(
+internal class RemoteJokeSourceImpl @Inject constructor(
     private val jokeApiService: JokeApiService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : RemoteJokeSource {

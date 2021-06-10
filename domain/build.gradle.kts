@@ -3,7 +3,7 @@ plugins {
     id(DependencyConfig.Plugin.KOTLIN_ANDROID)
     id(DependencyConfig.Plugin.KOTLIN_KAPT)
     id(DependencyConfig.Plugin.ANDROID_HILT)
-    id(DependencyConfig.Plugin.KOTLINX_SERIALIZATION)
+    id(DependencyConfig.Plugin.KOTLIN_PARCELIZE)
 }
 
 android {
@@ -13,12 +13,11 @@ android {
         minSdk = Version.AppConfig.Base.MIN_SDK
         targetSdk = Version.AppConfig.Base.TARGET_SDK
         testInstrumentationRunner = Version.AppConfig.Base.TEST_RUNNER
-
-        buildConfigField("String", "BASE_URL", "\"https://api.icndb.com/\"")
     }
 }
 
 dependencies {
-    api(DependencyManager.dataLibraries)
+    api(project(":data"))
+    implementation(DependencyManager.domainLibraries)
     kapt(DependencyManager.compilerLibraries)
 }

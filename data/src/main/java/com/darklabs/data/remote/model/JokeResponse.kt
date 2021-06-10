@@ -9,7 +9,7 @@ data class JokeResponse(
     @SerialName("type")
     val type: String,
     @SerialName("value")
-    val value: ArrayList<out JokeResponse>
+    val value: List<Joke>
 )
 
 @Serializable

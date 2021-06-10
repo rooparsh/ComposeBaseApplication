@@ -7,6 +7,7 @@ object DependencyConfig {
         const val KOTLIN_KAPT = "kotlin-kapt"
         const val ANDROID_HILT = "dagger.hilt.android.plugin"
         const val KOTLINX_SERIALIZATION = "kotlinx-serialization"
+        const val KOTLIN_PARCELIZE = "kotlin-parcelize"
     }
 
     object Compose {
@@ -32,12 +33,14 @@ object DependencyConfig {
             "androidx.appcompat:appcompat:${Version.AppConfig.Android.APP_COMPAT}"
         private const val LIFE_CYCLE_KTX =
             "androidx.lifecycle:lifecycle-runtime-ktx:${Version.AppConfig.Android.LIFECYCLE_KTX}"
-
+        private const val VIEW_MODEL =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.AppConfig.Android.LIFECYCLE_KTX}"
 
         val list = arrayListOf<String>().apply {
             add(CORE)
             add(APP_COMPAT)
             add(LIFE_CYCLE_KTX)
+            add(VIEW_MODEL)
         }
     }
 

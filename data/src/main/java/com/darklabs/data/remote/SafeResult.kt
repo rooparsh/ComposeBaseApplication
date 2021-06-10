@@ -1,8 +1,5 @@
 package com.darklabs.data.remote
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
 sealed class SafeResult<out T> {
 
     data class Success<T>(val data: T) : SafeResult<T>()

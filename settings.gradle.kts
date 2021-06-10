@@ -7,5 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BaseCompose"
-include(":app")
-include(":data")
+include(":app", ":data", ":domain")

@@ -24,4 +24,9 @@ object DependencyManager {
         addAll(DependencyConfig.Networking.list)
         addAll(DependencyConfig.Google.Di.list)
     }
+
+    val domainLibraries = arrayListOf<String>().apply {
+        addAll(DependencyConfig.Async.list)
+        addAll(DependencyConfig.Google.Di.list)
+    }
 }
