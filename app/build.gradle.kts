@@ -3,7 +3,7 @@ plugins {
     id(DependencyConfig.Plugin.KOTLIN_ANDROID)
     id(DependencyConfig.Plugin.KOTLIN_KAPT)
     id(DependencyConfig.Plugin.ANDROID_HILT)
-    id("scabbard.gradle") version "0.4.0"
+    //id("scabbard.gradle") version "0.4.0"
 }
 
 subprojects {
@@ -12,12 +12,13 @@ subprojects {
     }
 }
 
-scabbard {
+/*scabbard {
     enabled = true
-}
+}*/
 
 android {
     compileSdk = Version.AppConfig.Base.COMPILE_SDK
+    namespace = Version.AppConfig.Base.APP_ID
 
     defaultConfig {
         applicationId = Version.AppConfig.Base.APP_ID
@@ -32,8 +33,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {

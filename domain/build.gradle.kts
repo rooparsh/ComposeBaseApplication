@@ -14,6 +14,7 @@ android {
         targetSdk = Version.AppConfig.Base.TARGET_SDK
         testInstrumentationRunner = Version.AppConfig.Base.TEST_RUNNER
     }
+    namespace = "com.darklabs.domain"
 }
 
 dependencies {
