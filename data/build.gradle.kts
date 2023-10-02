@@ -16,6 +16,7 @@ android {
 
         buildConfigField("String", "BASE_URL", "\"https://api.icndb.com/\"")
     }
+    namespace = "com.darklabs.data"
 }
 
 dependencies {

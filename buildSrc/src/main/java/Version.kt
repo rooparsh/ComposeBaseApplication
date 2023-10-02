@@ -1,17 +1,17 @@
 object Version {
 
     object Project {
-        const val GRADLE_TOOLS = "7.3.0"
-        const val KOTLIN_GRADLE = "1.5.10"
+        const val GRADLE_TOOLS = "7.4.2"
+        const val KOTLIN_GRADLE = "1.5.20"
         const val DAGGER_HILT = "2.44"
     }
 
     object AppConfig {
         object Base {
             const val APP_ID = "com.darklabs.basecompose"
-            const val COMPILE_SDK = 30
+            const val COMPILE_SDK = 33
             const val MIN_SDK = 21
-            const val TARGET_SDK = 30
+            const val TARGET_SDK = 33
             const val VERSION_CODE = 1
             const val VERSION_NAME = "1.0.0"
             const val TEST_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
