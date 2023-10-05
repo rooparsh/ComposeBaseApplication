@@ -8,6 +8,11 @@ plugins {
 
 android {
     compileSdk = Version.AppConfig.Base.COMPILE_SDK
+    namespace = Version.AppConfig.Base.DATA_ID
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         minSdk = Version.AppConfig.Base.MIN_SDK
