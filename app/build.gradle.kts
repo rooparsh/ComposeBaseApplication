@@ -1,9 +1,10 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id(DependencyConfig.Plugin.APPLICATION)
     id(DependencyConfig.Plugin.KOTLIN_ANDROID)
     id(DependencyConfig.Plugin.KOTLIN_KAPT)
     id(DependencyConfig.Plugin.ANDROID_HILT)
-    //id("scabbard.gradle") version "0.4.0"
 }
 
 subprojects {
@@ -11,10 +12,6 @@ subprojects {
         from("variants.gradle.kts")
     }
 }
-
-/*scabbard {
-    enabled = true
-}*/
 
 android {
     compileSdk = Version.AppConfig.Base.COMPILE_SDK
@@ -33,12 +30,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
     buildFeatures {
